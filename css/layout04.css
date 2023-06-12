@@ -1,0 +1,468 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.header.on {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.header .header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 80px;
+}
+
+.header h1 {
+    width: 220px;
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+.header .gnb a {
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    white-space: nowrap;
+}
+
+.header .customer_link {
+    width: 220px;
+}
+
+.header .customer_link a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    display: block;
+    white-space: nowrap;
+}
+
+/* 여기까지 header */
+
+.mainvisual {
+    z-index: 1;
+    position: relative;
+
+    border-radius: 0 0 200px 0;
+    overflow: hidden;
+}
+
+
+
+.mainvisual::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.mainvisual .mainslide .itm01 {
+    height: 100vh;
+    background: url(../img/bg_intro01.jpg)no-repeat center center/cover;
+}
+
+.mainvisual .mainslide .itm02 {
+    height: 100vh;
+    background: url(/img/bg_intro02.jpg)no-repeat center center/cover;
+}
+
+.mainvisual .mainslide .itm03 {
+    height: 100vh;
+    background: url(../img/bg_intro03.jpg)no-repeat center center/cover;
+}
+
+.mainvisual .slick-dots {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+}
+
+.mainvisual .slick-dots>li {
+    display: inline-block;
+    padding: 5px 0;
+    cursor: pointer;
+
+}
+
+.mainvisual .slick-dots li button {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 2px;
+    border: none;
+    outline: none;
+    font-size: 0;
+
+}
+
+.mainvisual .slick-dots li button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 100%;
+    background: rgb(238, 86, 59);
+}
+
+.mainvisual .slick-dots li.slick-active button::after {
+    width: 100%;
+    transition: 3s;
+}
+
+.mainvisual .slick-dots button {
+    display: none;
+
+}
+
+.mainvisual .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    max-width: 1400px;
+    width: 100%;
+}
+
+.mainvisual .arrows i {
+    color: #fff;
+    font-size: 30px;
+    padding: 35px;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0.5;
+    border-radius: 50%;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.mainvisual .arrows .left {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.mainvisual:hover .arrows .left {
+    transform: translate(30px, 0);
+    opacity: 0.8;
+}
+
+.mainvisual .arrows .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.mainvisual:hover .arrows .right {
+    transform: translate(-30px, 0);
+    opacity: 0.8;
+}
+
+.mainvisual .scroll {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+}
+
+.mainvisual .scroll span {
+    position: relative;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    /* 대문자 */
+}
+
+.mainvisual .scroll span::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 1px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, 0);
+}
+
+.mainvisual .scroll span::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 1);
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    outline: 3px solid rgba(255, 255, 255, 1);
+    animation: circle 1.5s infinite
+}
+
+@keyframes circle {
+    0% {
+        transform: translate(-50%, 0);
+        outline: 0 solid rgba(255, 255, 255, 1);
+
+    }
+
+    90% {
+        outline: 0 solid rgba(255, 255, 255, 1)
+    }
+
+    100% {
+        transform: translate(-50%, 90px);
+        outline: 20px solid rgba(255, 255, 255, 0)
+    }
+}
+
+.mainvisual .slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.mainvisual h2 {
+    color: #fff;
+    text-align: center;
+    margin: 0 0 30px 0;
+    text-shadow: 0 0 3px #000;
+}
+
+.mainvisual .slogan h2 strong {
+    display: block;
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.mainvisual .slogan h2 span {
+    display: block;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.mainvisual p {
+    max-width: 400px;
+    text-shadow: 0 0 3px #000;
+    font-size: 15px;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 여기까지  mainvisual */
+
+.maincontent .tit {
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+.maincontent h2 strong {
+    font-size: 14px;
+    display: block;
+    margin: 0 0 10px 0;
+}
+
+.maincontent h2 span {
+    font-size: 40px;
+    font-weight: 500;
+    color: #866750;
+}
+
+.maincontent .inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.maincontent figure {
+    text-align: center;
+}
+
+.maincontent .img_box {
+    margin: 0 0 15px 0;
+    position: relative;
+}
+
+.maincontent .img_box::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 30px;
+    color: #fff;
+    background: #866750;
+    text-align: center;
+}
+
+.maincontent .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+/* 여기까지 maincontent */
+
+.mainevent {
+    padding: 100px 0 400px 0;
+    background: url(../img/bg_main2.jpg)no-repeat left bottom/cover;
+}
+
+.mainevent .tit {
+    margin: 0 auto 27px auto;
+}
+
+.mainevent h2 span {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    line-height: 36px;
+    color: #fff;
+}
+
+.mainevent .inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.mainevent .itm {
+    padding: 40px 50px;
+    background: rgba(134, 103, 80, 0.75);
+    color: #fff;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.mainevent .itm h3 {
+    font-size: 25px;
+    margin: 0 0 20px 0;
+}
+
+/* 여기까지 mainevent */
+
+.footer {
+    padding: 70px 0;
+    font-size: 12px;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 0 5px 0;
+}
+
+.footer ul>li {
+    position: relative;
+}
+
+.footer ul>li~li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    width: 1px;
+    height: 12px;
+    transform: translate(0, -50%);
+    background: #ddd
+}
+
+.footer address {
+    text-align: center;
+}
+
+/*  여기까지 footer */
+
+.footer .title {
+    position: relative;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 50px;
+    color: #ddd;
+    font-family: 'Noto Serif KR';
+
+    width: 1000px;
+    margin: 0 auto 10px auto;
+}
+
+.footer .title span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.footer .title span::after {
+    content: "“카시아 속초는 대포항 앞바다와 바로 연결”";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #333;
+
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+
+    border-right: 1px solid #999;
+    animation: tt 3s infinite steps(20, end);
+}
+
+.footer .title:hover span::after {
+    width: 950px;
+    transition-timing-function: steps(20, end);
+
+}
+
+@keyframes tt {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 1000px;
+    }
+}
+
+/*  */
+
+.tbtn {
+    border: 1px solid #333;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 15px;
+    width: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.tbtn span {
+    display: inline-block;
+    margin: 0 0 0 15px;
+}
+
+.tbtn:hover {
+    width: 100px;
+}
